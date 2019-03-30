@@ -5,8 +5,17 @@ import java.util.Map;
 
 public class PracticeB {
     Map<String,Integer> createUpdatedCollection(Map<String,Integer> collectionA, Map<String,List<String>> object) {
-        //实现练习要求，并改写该行代码。
+        for(String key : collectionA.keySet()) {
+            Integer count = collectionA.get(key);
 
-        return null;
+            List<String> list = object.get("value");
+            if(list.contains(key)) {
+                double step = Math.floor(count / 3);
+                count -= (int)(step);
+                collectionA.put(key, count);
+            }
+        }
+
+        return collectionA;
     }
 }
