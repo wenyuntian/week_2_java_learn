@@ -10,8 +10,8 @@ public class PracticeB {
 
             List<String> list = object.get("value");
             if(list.contains(key)) {
-                double step = Math.floor(count / 3);
-                count -= (int)(step);
+                Integer step = count / 3;
+                count -= step;
                 collectionA.put(key, count);
             }
         }
